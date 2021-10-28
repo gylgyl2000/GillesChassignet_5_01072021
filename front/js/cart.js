@@ -1,11 +1,11 @@
 // Afficher les articles du panier //
-
 afficherArticlesPanier();
+// Affichage de la quantité totale d'articles dans le panier //
 affichageQuantitePanier();
+// Affichage du prix total du panier //
 affichageTotalPanier();
 
 // Supprimer un article //
-  
 function supprimerArticle() {
   if (panier != null) {
     for (let i = 0; i < panier.length; i++) {
@@ -23,11 +23,9 @@ function supprimerArticle() {
       })
   }}
 };
-
 supprimerArticle();
 
 // Modifier la quantité d'un article //
-
 function modifierQuantite() {
   if (panier != null) {
     for (let i = 0; i < panier.length; i++) {
@@ -42,11 +40,9 @@ function modifierQuantite() {
     }
   }
 };
-
 modifierQuantite();
 
 // Validation du formulaire //
-
 function checkIfFieldIsValid(input, regExp) {
   return input.value.match(regExp) !== null;
 }
@@ -70,9 +66,9 @@ function validationFormulaire() {
       city = document.querySelector("#city"),
       email = document.querySelector("#email");
 
-  // Définition des expressions régulières pour vérifier de la validité des champs //
+  // Définition des expressions régulières pour vérifier la validité des champs //
   let stringRegExp = /([A-Za-z0-9_\s\-'\u00C0-\u024F]+)/;
-  let emailRegExp = /^([\w\-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/i;
+  let emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   // Vérification de la validité des champs
   let isfirstNameValid = checkIfFieldIsValid(firstName, stringRegExp),

@@ -14,10 +14,9 @@ fetch("http://localhost:4000/api/products/" + index)
             element.innerHTML = newColor;
             element.setAttribute("value", newColor);
             document.querySelector("#colors").append(element);
-
-            // Appel de la fonction Choisir la couleur //
+            // Choisir la couleur //
             choixCouleur();
-            //Appel de la fonction Choisir la quantite //
+            // Choisir la quantite //
             quantiteKanap();            
         };
         
@@ -39,10 +38,16 @@ fetch("http://localhost:4000/api/products/" + index)
                 }
             }
         });
-        // Si le panier est vide //
-        function panierVide() {
+
+        // Enregistrer le nouvel article dans le panier //
+        function nouvelArticleDansPanier() {
             productinCard.push(new Panier(index, couleur, quantite, jsonKanap.imageUrl, jsonKanap.altTxt, jsonKanap.name, jsonKanap.price));
             localStorage.setItem("kanap", JSON.stringify(productinCard));
+        }
+
+        // Si le panier est vide //
+        function panierVide() {
+            nouvelArticleDansPanier();
             articlePanier();
         };
         // Comparer le panier //
@@ -58,8 +63,7 @@ fetch("http://localhost:4000/api/products/" + index)
                     resultatRecherche.quantite = parseInt(quantite) + parseInt(resultatRecherche.quantite);
                     localStorage.setItem("kanap", (JSON.stringify(comparePanier)));
                 } else {
-                    productinCard.push(new Panier(index, couleur, quantite, jsonKanap.imageUrl, jsonKanap.altTxt, jsonKanap.name, jsonKanap.price));
-                    localStorage.setItem("kanap", JSON.stringify(productinCard));
+                    nouvelArticleDansPanier();
                 }
                 articlePanier();
             }
@@ -73,7 +77,7 @@ fetch("http://localhost:4000/api/products/" + index)
                     productinCard.push(new Panier(index, couleur, quantite, jsonKanap.imageUrl, jsonKanap.altTxt, jsonKanap.name, jsonKanap.price));
                     localStorage.setItem("kanap", JSON.stringify(productinCard));
                 }
-                articlePanier();
+                articlePanier(); 
             } */
         };
     });

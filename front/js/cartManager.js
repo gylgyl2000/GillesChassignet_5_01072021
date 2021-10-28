@@ -1,10 +1,8 @@
 // localStorage //
-
 let panier = localStorage.getItem("kanap");
 panier = JSON.parse(panier);
 
 // Remplissage du panier //
-
 function afficherArticlesPanier() {
     if (panier != null) {
     for (let i = 0; i < panier.length; i++) {
@@ -35,7 +33,6 @@ function afficherArticlesPanier() {
 };
 
 // Calcul de la quantité totale d'articles dans le panier //
-
 function calculQuantitePanier() {
     if (panier != null) {
         let quantitePanier = 0;
@@ -49,14 +46,12 @@ function calculQuantitePanier() {
 };
 
 // Affichage de la quantité totale d'articles dans le panier //
-
 function affichageQuantitePanier() {
     const quantiteTotale = document.querySelector("#totalQuantity");
     quantiteTotale.innerHTML = `${calculQuantitePanier()}`;
 };
 
 // Calcul du prix total du panier //
-
 function calculTotalPanier() {
     if (panier != null) {
         let totalPanier = 0;
@@ -70,9 +65,7 @@ function calculTotalPanier() {
 };
 
 // Affichage du prix total du panier //
-
 function affichageTotalPanier() {
     const panierTotal = document.querySelector("#totalPrice");
     panierTotal.innerHTML = `${calculTotalPanier()}`;
-};  
-
+};

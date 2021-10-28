@@ -14,7 +14,7 @@ class Panier {
 let url = new URL(window.location.href);
 let index = url.searchParams.get("id");
 
-// Vérifier sur un panier existe déjà, sinon en créer un //
+// Vérifier si un panier existe déjà, sinon en créer un //
 let productinCard = localStorage.getItem("kanap") ?
     JSON.parse(localStorage.getItem("kanap")) : [];
 
