@@ -9,7 +9,7 @@ const products = [
     "altTxt": "Photo d'un canapé bleu, deux places"
   },
   {
-    "colors": ["Black/Yellow", "Black/Red"],
+    "colors": ["Black-Yellow", "Black-Red"],
     "_id": "415b7cacb65d43b2b5c1ff70f3393ad1",
     "name": "Kanap Cyllène",
     "price": 4499,
